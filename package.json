@@ -1,6 +1,7 @@
 {
   "name": "folio-flow",
   "version": "0.1.0",
+  "displayName": "FolioFlow",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,6 +10,10 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
+    "firebase": "^12.8.0",
+    "framer-motion": "^12.26.2",
+    "highlight.js": "^11.11.1",
     "next": "16.1.2",
     "react": "19.2.3",
     "react-dom": "19.2.3"
