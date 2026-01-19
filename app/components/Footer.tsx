@@ -73,11 +73,11 @@ const navigation = {
   ],
   developers: [
     { href: "/api-docs", label: "API Docs", id: "api-docs" },
-    { 
-      href: "https://github.com", 
-      label: "GitHub", 
+    {
+      href: "https://github.com",
+      label: "GitHub",
       id: "github",
-      external: true 
+      external: true,
     },
   ],
 } as const;
@@ -93,17 +93,21 @@ type NavigationItem = {
 export default function Footer() {
   const pathname = usePathname();
 
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string, href: string) => {
+  const handleScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    id: string,
+    href: string,
+  ) => {
     e.preventDefault();
-    
+
     // Handle external links
-    if (href.startsWith('http')) {
-      window.open(href, '_blank', 'noopener,noreferrer');
+    if (href.startsWith("http")) {
+      window.open(href, "_blank", "noopener,noreferrer");
       return;
     }
 
     // Handle hash navigation on homepage
-    if (pathname === "/" && !href.startsWith('/')) {
+    if (pathname === "/" && !href.startsWith("/")) {
       const element = document.getElementById(id);
       if (element) {
         element.scrollIntoView({
@@ -111,22 +115,22 @@ export default function Footer() {
           block: "start",
         });
         // Update URL without page reload
-        window.history.pushState(null, '', `#${id}`);
+        window.history.pushState(null, "", `#${id}`);
       }
       return;
     }
 
     // Handle navigation to other pages with hash
-    if (href.includes('#')) {
-      const [page, hash] = href.split('#');
-      if (pathname === page || (page === '/' && pathname === '/')) {
+    if (href.includes("#")) {
+      const [page, hash] = href.split("#");
+      if (pathname === page || (page === "/" && pathname === "/")) {
         const element = document.getElementById(hash);
         if (element) {
           element.scrollIntoView({
             behavior: "smooth",
             block: "start",
           });
-          window.history.pushState(null, '', `#${hash}`);
+          window.history.pushState(null, "", `#${hash}`);
         }
       } else {
         window.location.href = href;
@@ -149,10 +153,12 @@ export default function Footer() {
               href={item.href}
               onClick={(e) => handleScroll(e, item.id, item.href)}
               className="text-gray-400 hover:text-white transition-colors duration-200 inline-block"
-              {...(item.external ? {
-                target: "_blank",
-                rel: "noopener noreferrer"
-              } : {})}
+              {...(item.external
+                ? {
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                  }
+                : {})}
             >
               {item.label}
               {item.external && (
@@ -168,17 +174,17 @@ export default function Footer() {
   );
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-[#1D1D26] text-white">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <Link 
-              href="/" 
+            <Link
+              href="/"
               className="inline-flex items-center space-x-3 mb-6"
               aria-label="FolioFlow Home"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 shadow-lg">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-blue-700 to-blue-800 shadow-lg">
                 <span className="text-sm font-bold">CV</span>
               </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-300 bg-clip-text text-transparent">
@@ -186,8 +192,8 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-gray-400 max-w-md leading-relaxed">
-              Build, manage, and distribute your CV with API superpowers. 
-              Modern tools for modern career development.
+              Build, manage, and distribute your CV with API superpowers. Modern
+              tools for modern career development.
             </p>
 
             {/* Social Icons */}
@@ -198,7 +204,7 @@ export default function Footer() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="h-10 w-10 flex items-center justify-center rounded-full bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white transition-all duration-200 transform hover:-translate-y-1"
+                  className="h-10 w-10 flex items-center justify-center rounded-full bg-[#24242F] text-gray-400 hover:bg-[#2C2C3A] hover:text-white transition-all duration-200 transform hover:-translate-y-1"
                   aria-label={social.label}
                 >
                   <social.Icon className="h-5 w-5" />
@@ -208,13 +214,13 @@ export default function Footer() {
           </div>
 
           {/* Navigation Columns */}
-          {renderNavigationColumn("Product", navigation.product)}
-          {renderNavigationColumn("Company", navigation.company)}
-          {renderNavigationColumn("Developers", navigation.developers)}
+          {renderNavigationColumn("Product", navigation.product, "dark")}
+          {renderNavigationColumn("Company", navigation.company, "dark")}
+          {renderNavigationColumn("Developers", navigation.developers, "dark")}
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-gray-800">
+        <div className="mt-12 pt-8 border-t border-gray-700">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-500 text-sm">
               &copy; {new Date().getFullYear()} FolioFlow. All rights reserved.
@@ -243,17 +249,17 @@ export default function Footer() {
         </div>
 
         {/* Trust Badges */}
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-xs text-gray-500">
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-xs text-gray-400">
           <div className="flex items-center">
             <span className="h-2 w-2 rounded-full bg-green-500 mr-2"></span>
             GDPR Compliant
           </div>
           <div className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-blue-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-blue-400 mr-2"></span>
             256-bit Encryption
           </div>
           <div className="flex items-center">
-            <span className="h-2 w-2 rounded-full bg-purple-500 mr-2"></span>
+            <span className="h-2 w-2 rounded-full bg-purple-400 mr-2"></span>
             SOC 2 Type II
           </div>
         </div>
