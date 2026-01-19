@@ -1,6 +1,6 @@
 // components/QuickLinks.tsx
 'use client';
-
+import Link from 'next/link';
 import {
   KeyIcon,
   DocumentTextIcon,
@@ -55,14 +55,14 @@ export default function QuickLinks() {
       <h3 className="text-sm font-semibold text-gray-900 mb-3">Quick Links</h3>
       <div className="space-y-2">
         {quickLinks.map((link) => (
-          <a
+          <Link
             key={link.id}
             href={link.href}
             className="flex items-center text-sm text-gray-600 hover:text-blue-600 p-2 hover:bg-gray-50 rounded transition-colors duration-150"
           >
             {getIcon(link.icon)}
             {link.label}
-          </a>
+          </Link>
         ))}
       </div>
     </div>

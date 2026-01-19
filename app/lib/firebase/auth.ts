@@ -1,13 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { 
-  Auth, 
   GoogleAuthProvider, 
   signInWithPopup, 
   signOut, 
   User,
   onAuthStateChanged,
   getIdToken,
-  AuthError,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   sendEmailVerification,
@@ -312,7 +310,7 @@ export const signInWithGoogle = async () => {
     console.error("Google Sign-In Error:", error);
     
     const errorCode = error.code;
-    const errorMessage = error.message;
+    // const errorMessage = error.message;
     const email = error.customData?.email;
     const credential = GoogleAuthProvider.credentialFromError(error);
 

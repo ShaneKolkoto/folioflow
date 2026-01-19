@@ -1,7 +1,11 @@
-// app/cookies/page.tsx
+"use client";
+
 import { ShieldCheckIcon, CircleStackIcon, InformationCircleIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
+import {  useScrollToSection } from '@/components/HomePageHandler';
 
 export default function CookiesPage() {
+  const { scrollTo } = useScrollToSection()
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
@@ -38,39 +42,39 @@ export default function CookiesPage() {
                   <h3 className="font-semibold text-gray-900 mb-4">On this page</h3>
                   <ul className="space-y-3">
                     <li>
-                      <a href="#what-are-cookies" className="text-gray-600 hover:text-blue-600 transition-colors block py-2 border-l-2 border-transparent hover:border-blue-500 hover:pl-4 pl-2">
+                      <button onClick={() => scrollTo('what-are-cookies', {offset: 100})} className="text-gray-600 hover:text-blue-600 transition-colors block py-2 border-l-2 border-transparent hover:border-blue-500 hover:pl-4 pl-2">
                         What Are Cookies?
-                      </a>
+                      </button>
                     </li>
                     <li>
-                      <a href="#how-we-use" className="text-gray-600 hover:text-blue-600 transition-colors block py-2 border-l-2 border-transparent hover:border-blue-500 hover:pl-4 pl-2">
+                      <button onClick={() => scrollTo('how-we-use', { offset: 100 })} className="text-gray-600 hover:text-blue-600 transition-colors block py-2 border-l-2 border-transparent hover:border-blue-500 hover:pl-4 pl-2">
                         How We Use Cookies
-                      </a>
+                      </button>
                     </li>
                     <li>
-                      <a href="#types-of-cookies" className="text-gray-600 hover:text-blue-600 transition-colors block py-2 border-l-2 border-transparent hover:border-blue-500 hover:pl-4 pl-2">
+                      <button onClick={() => scrollTo('types-of-cookies', { offset: 100 })} className="text-gray-600 hover:text-blue-600 transition-colors block py-2 border-l-2 border-transparent hover:border-blue-500 hover:pl-4 pl-2">
                         Types of Cookies We Use
-                      </a>
+                      </button>
                     </li>
                     <li>
-                      <a href="#third-party" className="text-gray-600 hover:text-blue-600 transition-colors block py-2 border-l-2 border-transparent hover:border-blue-500 hover:pl-4 pl-2">
+                      <button onClick={() => scrollTo('third-party', { offset: 100 })} className="text-gray-600 hover:text-blue-600 transition-colors block py-2 border-l-2 border-transparent hover:border-blue-500 hover:pl-4 pl-2">
                         Third-Party Cookies
-                      </a>
+                      </button>
                     </li>
                     <li>
-                      <a href="#your-choices" className="text-gray-600 hover:text-blue-600 transition-colors block py-2 border-l-2 border-transparent hover:border-blue-500 hover:pl-4 pl-2">
+                      <button onClick={() => scrollTo('your-choices', { offset: 100 })} className="text-gray-600 hover:text-blue-600 transition-colors block py-2 border-l-2 border-transparent hover:border-blue-500 hover:pl-4 pl-2">
                         Your Cookie Choices
-                      </a>
+                      </button>
                     </li>
                     <li>
-                      <a href="#cookie-duration" className="text-gray-600 hover:text-blue-600 transition-colors block py-2 border-l-2 border-transparent hover:border-blue-500 hover:pl-4 pl-2">
+                      <button onClick={() => scrollTo('cookie-duration', { offset: 100 })} className="text-gray-600 hover:text-blue-600 transition-colors block py-2 border-l-2 border-transparent hover:border-blue-500 hover:pl-4 pl-2">
                         Cookie Duration
-                      </a>
+                      </button>
                     </li>
                     <li>
-                      <a href="#updates" className="text-gray-600 hover:text-blue-600 transition-colors block py-2 border-l-2 border-transparent hover:border-blue-500 hover:pl-4 pl-2">
+                      <button onClick={() => scrollTo('updates', { offset: 100 })} className="text-gray-600 hover:text-blue-600 transition-colors block py-2 border-l-2 border-transparent hover:border-blue-500 hover:pl-4 pl-2">
                         Policy Updates
-                      </a>
+                      </button>
                     </li>
                   </ul>
                 </div>
@@ -79,10 +83,10 @@ export default function CookiesPage() {
                 <div className="bg-gradient-to-br from-blue-50 to-white rounded-xl border border-blue-200 p-6">
                   <h3 className="font-semibold text-gray-900 mb-4">Quick Actions</h3>
                   <div className="space-y-3">
-                    <a href="#manage-cookies" className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium">
+                    <button onClick={() => scrollTo('manage-cookies', { offset: 100 })} className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium">
                       <ShieldCheckIcon className="h-5 w-5 mr-2" />
                       Manage Cookie Preferences
-                    </a>
+                    </button>
                     <p className="text-sm text-gray-600">Control how cookies are used on your account.</p>
                   </div>
                 </div>
@@ -292,7 +296,7 @@ export default function CookiesPage() {
                     <div key={index} className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
                       <h3 className="font-semibold text-gray-900 mb-2">{service.provider}</h3>
                       <p className="text-sm text-gray-600 mb-3">{service.purpose}</p>
-                      <a 
+                      <Link 
                         href={service.link}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -300,7 +304,7 @@ export default function CookiesPage() {
                       >
                         View Privacy Policy
                         <span className="ml-1">↗</span>
-                      </a>
+                      </Link>
                     </div>
                   ))}
                 </div>
@@ -433,18 +437,18 @@ export default function CookiesPage() {
                   If you have any questions about how we use cookies or your privacy choices, please don't hesitate to contact us.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a 
+                  <Link 
                     href="/contact" 
                     className="bg-white text-gray-900 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg text-center transition-colors"
                   >
                     Contact Us
-                  </a>
-                  <a 
+                  </Link>
+                  <Link 
                     href="/privacy" 
                     className="bg-transparent border-2 border-gray-300 text-white hover:bg-gray-800 font-semibold py-3 px-6 rounded-lg text-center transition-colors"
                   >
                     View Privacy Policy
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

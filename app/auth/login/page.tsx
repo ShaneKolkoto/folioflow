@@ -11,7 +11,7 @@ import {
   CheckCircleIcon,
   ArrowRightIcon,
   UserCircleIcon,
-  ShieldCheckIcon,
+  // ShieldCheckIcon,
   CloudArrowUpIcon,
   CodeBracketIcon
 } from '@heroicons/react/24/outline';
@@ -709,12 +709,12 @@ export default function LoginPage() {
                 Our support team is here to help you get started.
               </p>
               <div className="space-y-3">
-                <a
+                <Link
                   href="mailto:support@folioflow.com"
                   className="block py-2 px-4 bg-white/10 hover:bg-white/20 rounded-lg transition-colors text-center"
                 >
                   📧 Email Support
-                </a>
+                </Link>
                 <Link
                   href="/help"
                   className="block py-2 px-4 bg-white/10 hover:bg-white/20 rounded-lg transition-colors text-center"

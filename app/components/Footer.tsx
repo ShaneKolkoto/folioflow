@@ -33,30 +33,30 @@ const SocialIcons = {
 
 // Social links configuration
 const socialLinks = [
-  {
-    name: "LinkedIn",
-    url: "https://linkedin.com",
-    Icon: SocialIcons.LinkedIn,
-    label: "Visit our LinkedIn page",
-  },
-  {
-    name: "Twitter",
-    url: "https://twitter.com",
-    Icon: SocialIcons.Twitter,
-    label: "Visit our Twitter page",
-  },
+  // {
+  //   name: "LinkedIn",
+  //   url: "https://linkedin.com",
+  //   Icon: SocialIcons.LinkedIn,
+  //   label: "Visit our LinkedIn page",
+  // },
+  // {
+  //   name: "Twitter",
+  //   url: "https://twitter.com",
+  //   Icon: SocialIcons.Twitter,
+  //   label: "Visit our Twitter page",
+  // },
   {
     name: "GitHub",
-    url: "https://github.com",
+    url: "https://github.com/ShaneKolkoto/folioflow",
     Icon: SocialIcons.GitHub,
     label: "Visit our GitHub repository",
   },
-  {
-    name: "YouTube",
-    url: "https://youtube.com",
-    Icon: SocialIcons.YouTube,
-    label: "Visit our YouTube channel",
-  },
+  // {
+  //   name: "YouTube",
+  //   url: "https://youtube.com",
+  //   Icon: SocialIcons.YouTube,
+  //   label: "Visit our YouTube channel",
+  // },
 ];
 
 // Navigation data
@@ -73,12 +73,19 @@ const navigation = {
   ],
   developers: [
     { href: "/api-docs", label: "API Docs", id: "api-docs" },
+     { 
+      href: "/github/contribute", 
+      label: "Contribute", 
+      id: "github-contribute",
+      external: false 
+    },
     { 
-      href: "https://github.com", 
+      href: "https://github.com/ShaneKolkoto/folioflow", 
       label: "GitHub", 
       id: "github",
       external: true 
     },
+   
   ],
 } as const;
 

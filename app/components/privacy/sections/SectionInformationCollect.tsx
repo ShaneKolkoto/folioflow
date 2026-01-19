@@ -33,7 +33,7 @@ export default function SectionInformationCollect({ ref }: SectionInformationCol
     >
       <div className="p-8">
         <div className="flex items-center mb-8">
-          <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center mr-4">
+          <div className="h-12 w-12 rounded-xl bg-linear-to-br from-purple-500 to-purple-600 flex items-center justify-center mr-4">
             <CircleStackIcon className="h-6 w-6 text-white" />
           </div>
           <div>
@@ -46,10 +46,10 @@ export default function SectionInformationCollect({ ref }: SectionInformationCol
           {/* Personal Information Card */}
           <motion.div
             whileHover={{ scale: 1.02 }}
-            className="p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl border border-blue-200"
+            className="p-6 bg-linear-to-br from-blue-50 to-blue-100 rounded-xl border border-blue-200"
           >
             <div className="flex items-center mb-4">
-              <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mr-3">
+              <div className="h-10 w-10 rounded-lg bg-linear-to-br from-blue-500 to-blue-600 flex items-center justify-center mr-3">
                 <UserIcon className="h-5 w-5 text-white" />
               </div>
               <h3 className="text-lg font-semibold text-blue-800">Information You Provide</h3>
@@ -64,7 +64,7 @@ export default function SectionInformationCollect({ ref }: SectionInformationCol
                   transition={{ delay: index * 0.1 }}
                   className="flex items-start"
                 >
-                  <CheckCircleIcon className="h-5 w-5 text-blue-500 mr-3 flex-shrink-0 mt-0.5" />
+                  <CheckCircleIcon className="h-5 w-5 text-blue-500 mr-3 shrink-0 mt-0.5" />
                   <span className="text-sm text-blue-700">{item}</span>
                 </motion.div>
               ))}
@@ -84,10 +84,10 @@ export default function SectionInformationCollect({ ref }: SectionInformationCol
           {/* Automated Collection Card */}
           <motion.div
             whileHover={{ scale: 1.02 }}
-            className="p-6 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl border border-purple-200"
+            className="p-6 bg-linear-to-br from-purple-50 to-purple-100 rounded-xl border border-purple-200"
           >
             <div className="flex items-center mb-4">
-              <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center mr-3">
+              <div className="h-10 w-10 rounded-lg bg-linear-to-br from-purple-500 to-purple-600 flex items-center justify-center mr-3">
                 <ChartBarIcon className="h-5 w-5 text-white" />
               </div>
               <h3 className="text-lg font-semibold text-purple-800">Automated Collection</h3>
@@ -102,7 +102,7 @@ export default function SectionInformationCollect({ ref }: SectionInformationCol
                   transition={{ delay: index * 0.1 }}
                   className="flex items-start"
                 >
-                  <CheckCircleIcon className="h-5 w-5 text-purple-500 mr-3 flex-shrink-0 mt-0.5" />
+                  <CheckCircleIcon className="h-5 w-5 text-purple-500 mr-3 shrink-0 mt-0.5" />
                   <span className="text-sm text-purple-700">{item}</span>
                 </motion.div>
               ))}
@@ -141,7 +141,7 @@ export default function SectionInformationCollect({ ref }: SectionInformationCol
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="mt-8 p-5 bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl border border-gray-200"
+          className="mt-8 p-5 bg-linear-to-r from-gray-50 to-gray-100 rounded-xl border border-gray-200"
         >
           <div className="flex items-start">
             <div className="h-6 w-6 rounded-full bg-gray-300 flex items-center justify-center mr-3 mt-1">

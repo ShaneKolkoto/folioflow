@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExclamationTriangleIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useCookies } from '@/contexts/CookieContext';
+import Link from 'next/link';
 
 interface CookieBannerProps {
   onCustomize?: () => void;
@@ -107,12 +108,12 @@ export default function CookieBanner({ onCustomize }: CookieBannerProps) {
                 </ul>
                 <p className="text-sm text-yellow-600">
                   By continuing, you agree to our use of cookies as described in our{' '}
-                  <a 
+                  <Link 
                     href="/privacy" 
                     className="font-semibold text-yellow-700 hover:text-yellow-800 underline"
                   >
                     Privacy Policy
-                  </a>
+                  </Link>
                   .
                 </p>
               </div>
@@ -201,9 +202,9 @@ export default function CookieBanner({ onCustomize }: CookieBannerProps) {
                 <div className="flex items-center justify-between text-xs text-yellow-600">
                   <span>
                     You can change your preferences anytime in{' '}
-                    <a href="/settings" className="underline hover:text-yellow-700">
+                    <Link href="/settings" className="underline hover:text-yellow-700">
                       Settings
-                    </a>
+                    </Link>
                   </span>
                   <motion.div
                     animate={{ opacity: [0.5, 1, 0.5] }}

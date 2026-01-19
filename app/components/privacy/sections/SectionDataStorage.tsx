@@ -50,7 +50,7 @@ export default function SectionDataStorage({ ref }: SectionDataStorageProps) {
     >
       <div className="p-8">
         <div className="flex items-center mb-8">
-          <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center mr-4">
+          <div className="h-12 w-12 rounded-xl bg-linear-to-br from-red-500 to-red-600 flex items-center justify-center mr-4">
             <ShieldCheckIcon className="h-6 w-6 text-white" />
           </div>
           <div>
@@ -71,7 +71,7 @@ export default function SectionDataStorage({ ref }: SectionDataStorageProps) {
               className="p-5 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all"
             >
               <div className="flex items-start">
-                <div className={`h-12 w-12 rounded-lg bg-gradient-to-br ${feature.color} flex items-center justify-center mr-4`}>
+                <div className={`h-12 w-12 rounded-lg bg-linear-to-br ${feature.color} flex items-center justify-center mr-4`}>
                   <feature.icon className="h-6 w-6 text-white" />
                 </div>
                 <div>
@@ -86,7 +86,7 @@ export default function SectionDataStorage({ ref }: SectionDataStorageProps) {
         {/* Security Visualization */}
         <div className="mb-8">
           <h3 className="font-semibold text-gray-900 mb-4">Security Layers</h3>
-          <div className="relative h-40 bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl border border-gray-200 p-4">
+          <div className="relative h-40 bg-linear-to-r from-gray-50 to-gray-100 rounded-xl border border-gray-200 p-4">
             {/* Animated Security Rings */}
             <div className="absolute inset-0 flex items-center justify-center">
               <motion.div
@@ -106,7 +106,7 @@ export default function SectionDataStorage({ ref }: SectionDataStorageProps) {
               />
               
               {/* Center Lock */}
-              <div className="absolute h-12 w-12 rounded-full bg-gradient-to-br from-gray-900 to-gray-800 flex items-center justify-center">
+              <div className="absolute h-12 w-12 rounded-full bg-linear-to-br from-gray-900 to-gray-800 flex items-center justify-center">
                 <LockClosedIcon className="h-6 w-6 text-white" />
               </div>
             </div>
@@ -120,7 +120,7 @@ export default function SectionDataStorage({ ref }: SectionDataStorageProps) {
         </div>
 
         {/* Compliance Badges */}
-        <div className="p-5 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl border border-gray-200">
+        <div className="p-5 bg-linear-to-br from-gray-50 to-gray-100 rounded-xl border border-gray-200">
           <h3 className="font-semibold text-gray-900 mb-4">Compliance & Certifications</h3>
           <div className="flex flex-wrap gap-3">
             {[
@@ -133,9 +133,9 @@ export default function SectionDataStorage({ ref }: SectionDataStorageProps) {
               <motion.div
                 key={idx}
                 whileHover={{ scale: 1.05 }}
-                className="flex-1 min-w-[120px] p-3 bg-white rounded-lg border border-gray-200 text-center"
+                className="flex-1 min-w-30 p-3 bg-white rounded-lg border border-gray-200 text-center"
               >
-                <div className={`h-8 w-8 rounded-full bg-gradient-to-br ${cert.color} flex items-center justify-center mx-auto mb-2`}>
+                <div className={`h-8 w-8 rounded-full bg-linear-to-br ${cert.color} flex items-center justify-center mx-auto mb-2`}>
                   <ShieldCheckIcon className="h-4 w-4 text-white" />
                 </div>
                 <div className="font-semibold text-gray-900 text-sm">{cert.name}</div>
@@ -150,10 +150,10 @@ export default function SectionDataStorage({ ref }: SectionDataStorageProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="mt-6 p-5 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl border border-blue-200"
+          className="mt-6 p-5 bg-linear-to-r from-blue-50 to-cyan-50 rounded-xl border border-blue-200"
         >
           <div className="flex items-start">
-            <CloudArrowUpIcon className="h-5 w-5 text-blue-600 mr-3 flex-shrink-0" />
+            <CloudArrowUpIcon className="h-5 w-5 text-blue-600 mr-3 shrink-0" />
             <div>
               <h4 className="font-semibold text-blue-800 mb-2">Backup Strategy</h4>
               <p className="text-sm text-blue-700">

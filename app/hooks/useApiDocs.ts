@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // hooks/useApiDocs.ts
 import { useState, useCallback } from 'react';
 

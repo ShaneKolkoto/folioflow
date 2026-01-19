@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/purity */
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
@@ -34,13 +35,13 @@ export default function SectionHowWeUseInfo({ ref }: SectionHowWeUseInfoProps) {
       className="scroll-mt-24 bg-white rounded-2xl border border-gray-200 shadow-xl overflow-hidden relative group"
     >
       {/* Animated Background Effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute inset-0 bg-linear-to-br from-green-50 to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
       <div className="relative p-8">
         <div className="flex items-center mb-8">
           <motion.div
             whileHover={{ rotate: 15 }}
-            className="h-12 w-12 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center mr-4 shadow-lg"
+            className="h-12 w-12 rounded-xl bg-linear-to-br from-green-500 to-emerald-600 flex items-center justify-center mr-4 shadow-lg"
           >
             <BoltIcon className="h-6 w-6 text-white" />
           </motion.div>
@@ -115,14 +116,14 @@ export default function SectionHowWeUseInfo({ ref }: SectionHowWeUseInfoProps) {
             >
               {/* Animated Background */}
               <div
-                className={`absolute inset-0 bg-gradient-to-br ${useCase.color} opacity-0 group-hover/card:opacity-5 rounded-xl transition-opacity duration-300`}
+                className={`absolute inset-0 bg-linear-to-br ${useCase.color} opacity-0 group-hover/card:opacity-5 rounded-xl transition-opacity duration-300`}
               />
 
               {/* Icon with Animation */}
               <motion.div
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.5 }}
-                className={`h-14 w-14 rounded-xl bg-gradient-to-br ${useCase.color} flex items-center justify-center mb-4 shadow-md group-hover/card:shadow-lg transition-shadow`}
+                className={`h-14 w-14 rounded-xl bg-linear-to-br ${useCase.color} flex items-center justify-center mb-4 shadow-md group-hover/card:shadow-lg transition-shadow`}
               >
                 <useCase.icon className="h-7 w-7 text-white" />
               </motion.div>
@@ -154,12 +155,12 @@ export default function SectionHowWeUseInfo({ ref }: SectionHowWeUseInfoProps) {
             <ChartBarIcon className="h-5 w-5 text-green-600 mr-2" />
             Data Flow Visualization
           </h3>
-          <div className="relative h-32 bg-gradient-to-r from-green-50 to-blue-50 rounded-xl border border-gray-200 overflow-hidden">
+          <div className="relative h-32 bg-linear-to-r from-green-50 to-blue-50 rounded-xl border border-gray-200 overflow-hidden">
             {/* Animated Data Points (Forward Flow) */}
             {[...Array(15)].map((_, i) => (
               <motion.div
                 key={`forward-${i}`}
-                className="absolute h-2 w-2 rounded-full bg-gradient-to-r from-green-500 to-blue-500"
+                className="absolute h-2 w-2 rounded-full bg-linear-to-r from-green-500 to-blue-500"
                 initial={{
                   x: -20,
                   y: Math.random() * 120 + 10,
@@ -185,7 +186,7 @@ export default function SectionHowWeUseInfo({ ref }: SectionHowWeUseInfoProps) {
             {[...Array(10)].map((_, i) => (
               <motion.div
                 key={`reverse-${i}`}
-                className="absolute h-2 w-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500"
+                className="absolute h-2 w-2 rounded-full bg-linear-to-r from-purple-500 to-pink-500"
                 initial={{
                   x: "100vw",
                   y: Math.random() * 120 + 10,
@@ -219,11 +220,11 @@ export default function SectionHowWeUseInfo({ ref }: SectionHowWeUseInfoProps) {
                     duration: 2,
                     repeatType: "reverse",
                   }}
-                  className="h-12 w-12 rounded-full bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center shadow-lg relative z-10"
+                  className="h-12 w-12 rounded-full bg-linear-to-br from-green-500 to-green-600 flex items-center justify-center shadow-lg relative z-10"
                 >
                   <CircleStackIcon className="h-6 w-6 text-white" />
                   <motion.div
-                    className="absolute -top-1 -right-1 h-5 w-5 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center"
+                    className="absolute -top-1 -right-1 h-5 w-5 rounded-full bg-linear-to-br from-emerald-400 to-emerald-600 flex items-center justify-center"
                     animate={{ scale: [1, 1.2, 1] }}
                     transition={{ repeat: Infinity, duration: 2 }}
                   >
@@ -253,11 +254,11 @@ export default function SectionHowWeUseInfo({ ref }: SectionHowWeUseInfoProps) {
                     repeatType: "reverse",
                     delay: 0.2,
                   }}
-                  className="h-12 w-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-lg relative z-10"
+                  className="h-12 w-12 rounded-full bg-linear-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-lg relative z-10"
                 >
                   <BoltIcon className="h-6 w-6 text-white" />
                   <motion.div
-                    className="absolute -bottom-1 -right-1 h-5 w-5 rounded-full bg-gradient-to-br from-cyan-400 to-cyan-600 flex items-center justify-center"
+                    className="absolute -bottom-1 -right-1 h-5 w-5 rounded-full bg-linear-to-br from-cyan-400 to-cyan-600 flex items-center justify-center"
                     animate={{ rotate: 360 }}
                     transition={{
                       repeat: Infinity,
@@ -291,11 +292,11 @@ export default function SectionHowWeUseInfo({ ref }: SectionHowWeUseInfoProps) {
                     repeatType: "reverse",
                     delay: 0.4,
                   }}
-                  className="h-12 w-12 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-lg relative z-10"
+                  className="h-12 w-12 rounded-full bg-linear-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-lg relative z-10"
                 >
                   <UserIcon className="h-6 w-6 text-white" />
                   <motion.div
-                    className="absolute -top-1 -left-1 h-5 w-5 rounded-full bg-gradient-to-br from-pink-400 to-pink-600 flex items-center justify-center"
+                    className="absolute -top-1 -left-1 h-5 w-5 rounded-full bg-linear-to-br from-pink-400 to-pink-600 flex items-center justify-center"
                     animate={{ y: [0, -3, 0] }}
                     transition={{ repeat: Infinity, duration: 1.5 }}
                   >
@@ -325,7 +326,7 @@ export default function SectionHowWeUseInfo({ ref }: SectionHowWeUseInfoProps) {
                       duration: 4,
                       ease: "linear",
                     }}
-                    className="absolute -top-3 -left-3 h-6 w-6 rounded-full bg-gradient-to-br from-pink-400 to-pink-600 flex items-center justify-center opacity-50"
+                    className="absolute -top-3 -left-3 h-6 w-6 rounded-full bg-linear-to-br from-pink-400 to-pink-600 flex items-center justify-center opacity-50"
                   >
                     <ArrowPathIcon className="h-3 w-3 text-white" />
                   </motion.div>
@@ -352,9 +353,9 @@ export default function SectionHowWeUseInfo({ ref }: SectionHowWeUseInfoProps) {
                   Database
                 </span>
                 <div className="flex items-center mt-1">
-                  <div className="h-1 w-8 bg-gradient-to-r from-green-400 to-green-300 rounded-full"></div>
+                  <div className="h-1 w-8 bg-linear-to-r from-green-400 to-green-300 rounded-full"></div>
                   <ArrowRightIcon className="h-3 w-3 text-green-400 mx-1" />
-                  <div className="h-1 w-8 bg-gradient-to-r from-green-300 to-blue-300 rounded-full"></div>
+                  <div className="h-1 w-8 bg-linear-to-r from-green-300 to-blue-300 rounded-full"></div>
                 </div>
               </div>
               <div className="flex flex-col items-center">
@@ -362,10 +363,10 @@ export default function SectionHowWeUseInfo({ ref }: SectionHowWeUseInfoProps) {
                   Processing
                 </span>
                 <div className="flex items-center mt-1">
-                  <div className="h-1 w-4 bg-gradient-to-r from-blue-400 to-blue-300 rounded-full"></div>
+                  <div className="h-1 w-4 bg-linear-to-r from-blue-400 to-blue-300 rounded-full"></div>
                   <ArrowRightIcon className="h-3 w-3 text-blue-400 mx-1" />
                   <ArrowLeftIcon className="h-3 w-3 text-pink-400 mx-1" />
-                  <div className="h-1 w-4 bg-gradient-to-r from-pink-300 to-blue-300 rounded-full"></div>
+                  <div className="h-1 w-4 bg-linear-to-r from-pink-300 to-blue-300 rounded-full"></div>
                 </div>
               </div>
               <div className="flex flex-col items-center">
@@ -373,9 +374,9 @@ export default function SectionHowWeUseInfo({ ref }: SectionHowWeUseInfoProps) {
                   User
                 </span>
                 <div className="flex items-center mt-1">
-                  <div className="h-1 w-8 bg-gradient-to-r from-purple-400 to-pink-300 rounded-full"></div>
+                  <div className="h-1 w-8 bg-linear-to-r from-purple-400 to-pink-300 rounded-full"></div>
                   <ArrowLeftIcon className="h-3 w-3 text-pink-400 mx-1" />
-                  <div className="h-1 w-8 bg-gradient-to-r from-pink-300 to-purple-300 rounded-full"></div>
+                  <div className="h-1 w-8 bg-linear-to-r from-pink-300 to-purple-300 rounded-full"></div>
                 </div>
               </div>
             </div>
@@ -394,11 +395,11 @@ export default function SectionHowWeUseInfo({ ref }: SectionHowWeUseInfoProps) {
             {/* Legend */}
             <div className="absolute top-2 left-2 flex items-center space-x-3">
               <div className="flex items-center">
-                <div className="h-2 w-2 rounded-full bg-gradient-to-r from-green-500 to-blue-500 mr-1"></div>
+                <div className="h-2 w-2 rounded-full bg-linear-to-r from-green-500 to-blue-500 mr-1"></div>
                 <span className="text-xs text-gray-600">Forward Flow</span>
               </div>
               <div className="flex items-center">
-                <div className="h-2 w-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 mr-1"></div>
+                <div className="h-2 w-2 rounded-full bg-linear-to-r from-purple-500 to-pink-500 mr-1"></div>
                 <span className="text-xs text-gray-600">Reverse Flow</span>
               </div>
             </div>
@@ -408,7 +409,7 @@ export default function SectionHowWeUseInfo({ ref }: SectionHowWeUseInfoProps) {
           <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
             <motion.div
               whileHover={{ scale: 1.02 }}
-              className="p-3 bg-gradient-to-br from-green-50 to-emerald-50 rounded-lg border border-green-200"
+              className="p-3 bg-linear-to-br from-green-50 to-emerald-50 rounded-lg border border-green-200"
             >
               <div className="flex items-center mb-2">
                 <ArrowRightIcon className="h-4 w-4 text-green-600 mr-2" />
@@ -424,7 +425,7 @@ export default function SectionHowWeUseInfo({ ref }: SectionHowWeUseInfoProps) {
 
             <motion.div
               whileHover={{ scale: 1.02 }}
-              className="p-3 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg border border-blue-200"
+              className="p-3 bg-linear-to-br from-blue-50 to-cyan-50 rounded-lg border border-blue-200"
             >
               <div className="flex items-center mb-2">
                 <BoltIcon className="h-4 w-4 text-blue-600 mr-2" />
@@ -440,7 +441,7 @@ export default function SectionHowWeUseInfo({ ref }: SectionHowWeUseInfoProps) {
 
             <motion.div
               whileHover={{ scale: 1.02 }}
-              className="p-3 bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg border border-purple-200"
+              className="p-3 bg-linear-to-br from-purple-50 to-pink-50 rounded-lg border border-purple-200"
             >
               <div className="flex items-center mb-2">
                 <ArrowPathIcon className="h-4 w-4 text-purple-600 mr-2" />
@@ -462,16 +463,16 @@ export default function SectionHowWeUseInfo({ ref }: SectionHowWeUseInfoProps) {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.5 }}
           whileHover={{ scale: 1.01 }}
-          className="p-5 bg-gradient-to-r from-gray-900 to-gray-800 rounded-xl border border-gray-700 text-white"
+          className="p-5 bg-linear-to-r from-gray-900 to-gray-800 rounded-xl border border-gray-700 text-white"
         >
           <div className="flex items-start">
-            <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center mr-4">
+            <div className="h-10 w-10 rounded-lg bg-linear-to-br from-indigo-500 to-indigo-600 flex items-center justify-center mr-4">
               <ShieldCheckIcon className="h-5 w-5 text-white" />
             </div>
             <div>
               <h4 className="font-semibold text-white mb-2 flex items-center">
                 Legal Compliance
-                <span className="ml-2 px-2 py-1 bg-gradient-to-r from-indigo-600 to-purple-600 rounded text-xs">
+                <span className="ml-2 px-2 py-1 bg-linear-to-r from-indigo-600 to-purple-600 rounded text-xs">
                   Required
                 </span>
               </h4>
@@ -490,7 +491,7 @@ export default function SectionHowWeUseInfo({ ref }: SectionHowWeUseInfoProps) {
               <motion.span
                 key={idx}
                 whileHover={{ scale: 1.05 }}
-                className="px-3 py-1 bg-gradient-to-r from-gray-800 to-gray-700 rounded-full text-xs font-medium border border-gray-600"
+                className="px-3 py-1 bg-linear-to-r from-gray-800 to-gray-700 rounded-full text-xs font-medium border border-gray-600"
               >
                 {badge} Compliant
               </motion.span>
@@ -504,7 +505,7 @@ export default function SectionHowWeUseInfo({ ref }: SectionHowWeUseInfoProps) {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={() => setShowDetailedUsage(!showDetailedUsage)}
-            className="w-full flex items-center justify-between p-4 bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl border border-gray-200 hover:border-gray-300 transition-all"
+            className="w-full flex items-center justify-between p-4 bg-linear-to-r from-gray-50 to-gray-100 rounded-xl border border-gray-200 hover:border-gray-300 transition-all"
           >
             <div className="flex items-center">
               <EyeIcon className="h-5 w-5 text-gray-600 mr-3" />

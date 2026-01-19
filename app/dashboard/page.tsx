@@ -2,6 +2,7 @@
 
 import { useAuth } from "@/contexts/AuthContext";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import {
   UserCircleIcon,
@@ -12,7 +13,7 @@ import {
 } from "@heroicons/react/24/outline";
 
 export default function DashboardPage() {
-  const { user, signOut, getApiKey } = useAuth();
+  const { user, getApiKey } = useAuth();
   const [apiKey, setApiKey] = useState<string | null>(null);
   const [showApiKey, setShowApiKey] = useState(false);
 
@@ -201,12 +202,11 @@ export default function DashboardPage() {
                   <span className="text-gray-600">Subscription</span>
                   <span
                     className={
-                      (
-                      user.subscriptionTier === 'unlimted'
-                        ? 'font-bold text-yellow-600'
-                        : user.subscriptionTier === 'pro'
-                        ? 'font-bold text-red-500'
-                        : 'font-bold text-blue-600')
+                      user.subscriptionTier === "unlimted"
+                        ? "font-bold text-yellow-600"
+                        : user.subscriptionTier === "pro"
+                          ? "font-bold text-red-500"
+                          : "font-bold text-blue-600"
                     }
                   >
                     {user.subscriptionTier}

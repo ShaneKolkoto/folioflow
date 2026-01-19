@@ -5,7 +5,7 @@ import { KeyIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline';
 
 export default function AuthenticationSection() {
   return (
-    <div id="authentication" className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
+    <section id="authentication" className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
       <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
         <KeyIcon className="h-6 w-6 mr-2" />
         Authentication
@@ -45,6 +45,6 @@ curl -X GET https://api.folioflow.com/api/portfolio \\
           </code>
         </pre>
       </div>
-    </div>
+    </section>
   );
 }

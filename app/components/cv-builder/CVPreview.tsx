@@ -18,6 +18,7 @@ import {
   ArrowDownTrayIcon,
   PrinterIcon
 } from '@heroicons/react/24/outline';
+import Image from 'next/image';
 
 interface CVPreviewProps {
   cvData: any;
@@ -162,7 +163,7 @@ export default function CVPreview({ cvData }: CVPreviewProps) {
         <div className="mb-8">
           <div className="flex flex-col md:flex-row md:items-center gap-6">
             {cvData?.photoURL ? (
-              <img 
+              <Image 
                 src={cvData.photoURL} 
                 alt={cvData?.name || 'Profile'}
                 className="w-32 h-32 rounded-full object-cover border-4 border-gray-100"

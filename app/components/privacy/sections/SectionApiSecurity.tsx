@@ -69,7 +69,7 @@ export default function SectionApiSecurity({ ref }: SectionApiSecurityProps) {
 
         <div className="bg-linear-to-r from-yellow-50 to-orange-50 p-4 rounded-lg border border-yellow-200 mb-6">
           <div className="flex items-start">
-            <div className="h-8 w-8 rounded-lg bg-linear-to-br from-yellow-500 to-orange-500 flex items-center justify-center mr-3 flex-shrink-0">
+            <div className="h-8 w-8 rounded-lg bg-linear-to-br from-yellow-500 to-orange-500 flex items-center justify-center mr-3 shrink-0">
               <ShieldCheckIcon className="h-4 w-4 text-white" />
             </div>
             <div>

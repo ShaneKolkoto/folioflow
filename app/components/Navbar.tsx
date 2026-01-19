@@ -15,6 +15,7 @@ import {
   ChartBarIcon,
   ChevronDownIcon,
 } from "@heroicons/react/24/outline";
+import Image from "next/image";
 
 export default function Navbar() {
   console.log(process.env.NEXT_PUBLIC_STATUS)
@@ -26,23 +27,6 @@ export default function Navbar() {
   const router = useRouter()
   // Function to handle smooth scroll on home page
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
-    e.preventDefault();
-    if (pathname === "/") {
-      const element = document.getElementById(id);
-
-      if (id === "api-docs" || id === "api-demo") {
-        window.location.href = `/${id}`;
-      }
-
-      if (element) {
-        element.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
-    } else {
-      window.location.href = `/#${id}`;
-    }
     setIsMenuOpen(false);
   };
 
@@ -156,16 +140,16 @@ export default function Navbar() {
                 })
               : // Public navigation for guests
                 navItems.map((item) => (
-                  <a
+                  <Link
                     key={item.id}
                     href={item.href}
-                    onClick={(e) => handleScroll(e, item.id)}
+                    // onClick={(e) => handleScroll(e, item.id)}
                     className={`text-gray-700 hover:text-blue-600 transition-colors cursor-pointer ${
                       pathname === item.href ? "text-blue-600 font-medium" : ""
                     }`}
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 ))}
           </div>
 
@@ -186,6 +170,8 @@ export default function Navbar() {
                   <div className="flex items-center space-x-3">
                     {user?.photoURL ? (
                       <img
+                      width={40}
+                      height={50}
                         src={user.photoURL}
                         alt={user.displayName || "User"}
                         className="h-8 w-8 rounded-full border-2 border-gray-200 group-hover:border-blue-500 transition-colors"
@@ -227,6 +213,8 @@ export default function Navbar() {
                       <div className="flex items-center space-x-3">
                         {user?.photoURL ? (
                           <img
+                          width={40}
+                          height={40}
                             src={user.photoURL}
                             alt={user.displayName || "User"}
                             className="h-10 w-10 rounded-full border-2 border-gray-200"
@@ -343,6 +331,8 @@ export default function Navbar() {
                     src={user.photoURL}
                     alt={user.displayName || "User"}
                     className="h-8 w-8 rounded-full"
+                    width={40}
+                    height={40}
                   />
                 ) : (
                   <UserCircleIcon className="h-6 w-6" />
@@ -432,17 +422,17 @@ export default function Navbar() {
                 // Mobile public navigation for guests
                 <>
                   {navItems.map((item) => (
-                    <a
+                    <Link
                       key={item.id}
                       href={item.href}
                       onClick={(e) => {
-                        handleScroll(e, item.id);
+                        // handleScroll(e, item.id);
                         setIsMenuOpen(false);
                       }}
                       className="px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg"
                     >
                       {item.label}
-                    </a>
+                    </Link>
                   ))}
                   {/* <div className="flex flex-col space-y-2 pt-4 border-t border-gray-200">
                     <Link
@@ -477,7 +467,9 @@ export default function Navbar() {
                     src={user.photoURL}
                     alt={user.displayName || "User"}
                     className="h-10 w-10 rounded-full"
-                  />
+                    width={40}
+                    height={40}
+                    />
                 ) : (
                   <div className="h-10 w-10 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
                     <span className="text-sm font-medium text-white">

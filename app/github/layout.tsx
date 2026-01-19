@@ -1,11 +1,10 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'FolioFlow - Privacy',
-  description: 'Login or sign up for FolioFlow to manage your CV with API superpowers',
+  title: 'FolioFlow - Github Contribute Page',
 };
 
-export default function PrivacyLayout({
+export default function ContributeLayout({
   children,
 }: {
   children: React.ReactNode;

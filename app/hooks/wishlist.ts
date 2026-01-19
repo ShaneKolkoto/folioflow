@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // hooks/useWishlist.ts
 'use client';
 
@@ -8,7 +9,7 @@ import {
   canjoinWishlist as canjoinWishlistApi,
   joinWishlistData,
   WishlistItem,
-  WishlistResponse
+  // WishlistResponse
 } from '@/lib/firebase/wishlist';
 
 export const useWishlist = () => {
@@ -41,12 +42,12 @@ export const useWishlist = () => {
         setSuccess(true);
         
         // Track conversion (Google Analytics, etc.)
-        if (window.gtag) {
-          window.gtag('event', 'waitlist_signup', {
-            event_category: 'engagement',
-            event_label: data.interests?.join(', ') || 'general',
-          });
-        }
+        // if (window.gtag) {
+        //   window.gtag('event', 'waitlist_signup', {
+        //     event_category: 'engagement',
+        //     event_label: data.interests?.join(', ') || 'general',
+        //   });
+        // }
       } else {
         setError(result.error?.message || 'Failed to join waitlist');
       }

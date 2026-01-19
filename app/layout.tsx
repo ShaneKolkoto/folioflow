@@ -78,7 +78,7 @@ export default function RootLayout({
     <html lang="en">
       <link rel="icon" href="/favicon.ico" sizes="any" />
       <body className={inter.className}>
-        <ErrorBoundary>
+        {/* <ErrorBoundary> */}
           <Suspense fallback={<LoadingFallback />}>
             <AuthProvider>
               <ProtectedRoute>
@@ -93,7 +93,7 @@ export default function RootLayout({
               </ProtectedRoute>
             </AuthProvider>
           </Suspense>
-        </ErrorBoundary>
+        {/* </ErrorBoundary> */}
       </body>
     </html>
   );

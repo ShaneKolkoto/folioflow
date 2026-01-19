@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable react-hooks/purity */
 // app/about/page.tsx
 "use client";
 
@@ -18,8 +20,9 @@ import {
   ShieldCheckIcon,
   LightBulbIcon,
   BeakerIcon,
-  HeartIcon
+  // HeartIcon
 } from '@heroicons/react/24/outline';
+import Link from 'next/link';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
@@ -100,7 +103,7 @@ export default function AboutPage() {
   };
 
   return (
-    <div className=" bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white">
+    <div className=" bg-linear-to-b from-gray-900 via-gray-800 to-gray-900 text-white">
       {/* Animated Background Particles */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         {[...Array(20)].map((_, i) => (
@@ -125,8 +128,8 @@ export default function AboutPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative pt-20 pb-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 via-purple-900/20 to-pink-900/20" />
+      <section className="relative pt-20 pb-50 overflow-hidden">
+        <div className="absolute inset-0 bg-linear-to-r from-blue-900/20 via-purple-900/20 to-pink-900/20" />
         
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -138,17 +141,17 @@ export default function AboutPage() {
             <motion.div
               whileHover={{ rotate: 360, scale: 1.1 }}
               transition={{ duration: 0.6 }}
-              className="inline-block p-4 rounded-2xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-blue-400/30 mb-8"
+              className="inline-block p-4 rounded-2xl bg-linear-to-br from-blue-500/20 to-purple-500/20 border border-blue-400/30 mb-8"
             >
               <RocketLaunchIcon className="h-16 w-16 text-blue-400" />
             </motion.div>
             
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                 Built by Developers,
               </span>
               <br />
-              <span className="bg-gradient-to-r from-green-400 to-cyan-400 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-green-400 to-cyan-400 bg-clip-text text-transparent">
                 For Developers
               </span>
             </h1>
@@ -168,18 +171,18 @@ export default function AboutPage() {
                 <div className="h-3 w-3 rounded-full bg-yellow-500 animate-pulse" />
                 <div className="h-3 w-3 rounded-full bg-green-500 animate-pulse" />
                 <span className="text-green-400">→</span>
-                <span className="text-gray-400">git commit -m "</span>
+                <span className="text-gray-400">git commit -m &ldquo;</span>
                 <span className="text-yellow-300">
                   {fullText.substring(0, typingIndex)}
                   <span className={`inline-block w-2 h-6 bg-yellow-300 ml-1 ${isTyping ? 'animate-pulse' : ''}`} />
                 </span>
-                <span className="text-gray-400">"</span>
+                <span className="text-gray-400">&ldquo;</span>
               </div>
             </motion.div>
           </motion.div>
 
           {/* Animated Stats */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
@@ -194,24 +197,24 @@ export default function AboutPage() {
               <motion.div
                 key={index}
                 whileHover={{ y: -8, scale: 1.05 }}
-                className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-6 rounded-2xl border border-gray-700/50 backdrop-blur-sm text-center"
+                className="bg-linear-to-br from-gray-800/50 to-gray-900/50 p-6 rounded-2xl border border-gray-700/50 backdrop-blur-sm text-center"
               >
-                <div className="inline-block p-3 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 mb-4">
+                <div className="inline-block p-3 rounded-xl bg-linear-to-br from-blue-500/20 to-purple-500/20 mb-4">
                   <div className="text-blue-400">{stat.icon}</div>
                 </div>
-                <div className="text-3xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                <div className="text-3xl font-bold bg-linear-to-r from-white to-gray-300 bg-clip-text text-transparent">
                   {stat.value}
                 </div>
                 <div className="text-sm text-gray-400 mt-2">{stat.label}</div>
               </motion.div>
             ))}
-          </motion.div>
+          </motion.div> */}
         </div>
       </section>
 
       {/* The Problem Section */}
       <section className="py-20 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-800/50 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-b from-transparent via-gray-800/50 to-transparent" />
         
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -221,18 +224,18 @@ export default function AboutPage() {
             variants={staggerContainer}
             className="text-center mb-16"
           >
-            <motion.div variants={fadeInUp} className="inline-block mb-4">
-              <span className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-red-500/20 to-orange-500/20 text-red-400 border border-red-500/30">
+            <motion.div variants={fadeInUp as any} className="inline-block mb-4">
+              <span className="inline-flex items-center px-4 py-2 rounded-full bg-linear-to-r from-red-500/20 to-orange-500/20 text-red-400 border border-red-500/30">
                 <LightBulbIcon className="h-5 w-5 mr-2" />
                 The Frustration
               </span>
             </motion.div>
             
-            <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold mb-6">
+            <motion.h2 variants={fadeInUp as any} className="text-4xl md:text-5xl font-bold mb-6">
               The <span className="text-red-400">Pain</span> We Felt
             </motion.h2>
             
-            <motion.p variants={fadeInUp} className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <motion.p variants={fadeInUp as any} className="text-xl text-gray-300 max-w-3xl mx-auto">
               As developers, we&apos;ve all been there. That sinking feeling when you need to update your portfolio...
             </motion.p>
           </motion.div>
@@ -268,16 +271,16 @@ export default function AboutPage() {
             ].map((pain, index) => (
               <motion.div
                 key={index}
-                variants={fadeInUp}
+                variants={fadeInUp as any}
                 whileHover={{ 
                   y: -10,
                   rotateX: 5,
                   transition: { duration: 0.3 }
                 }}
-                className={`bg-gradient-to-br ${pain.color} p-8 rounded-2xl border ${pain.border} backdrop-blur-sm`}
+                className={`bg-linear-to-br ${pain.color} p-8 rounded-2xl border ${pain.border} backdrop-blur-sm`}
               >
                 <motion.div
-                  animate={floatAnimation.animate}
+                  animate={floatAnimation.animate as any}
                   className="text-4xl mb-4"
                 >
                   {pain.emoji}
@@ -303,7 +306,7 @@ export default function AboutPage() {
               whileHover={{ scale: 1.1 }}
               className="inline-block mb-4"
             >
-              <span className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-green-500/20 to-cyan-500/20 text-green-400 border border-green-500/30">
+              <span className="inline-flex items-center px-4 py-2 rounded-full bg-linear-to-r from-green-500/20 to-cyan-500/20 text-green-400 border border-green-500/30">
                 <SparklesIcon className="h-5 w-5 mr-2" />
                 The Magic
               </span>
@@ -316,7 +319,7 @@ export default function AboutPage() {
               className="text-4xl md:text-5xl font-bold mb-6"
             >
               One Update,{' '}
-              <span className="bg-gradient-to-r from-green-400 to-cyan-400 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-green-400 to-cyan-400 bg-clip-text text-transparent">
                 Everywhere
               </span>
             </motion.h2>
@@ -391,8 +394,8 @@ export default function AboutPage() {
                   className="text-center"
                 >
                   <motion.div
-                    animate={pulseAnimation.animate}
-                    className={`h-20 w-20 rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center mx-auto mb-6 shadow-2xl`}
+                    animate={pulseAnimation.animate as any}
+                    className={`h-20 w-20 rounded-2xl bg-linear-to-br ${step.color} flex items-center justify-center mx-auto mb-6 shadow-2xl`}
                   >
                     <div className="text-white">
                       {step.icon}
@@ -481,9 +484,9 @@ export default function AboutPage() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ x: 10 }}
-                  className="flex items-start space-x-4 p-6 rounded-2xl bg-gradient-to-r from-gray-800/50 to-gray-900/50 border border-gray-700/50 backdrop-blur-sm"
+                  className="flex items-start space-x-4 p-6 rounded-2xl bg-linear-to-r from-gray-800/50 to-gray-900/50 border border-gray-700/50 backdrop-blur-sm"
                 >
-                  <div className="flex-shrink-0 mt-1">
+                  <div className="shrink-0 mt-1">
                     {feature.icon}
                   </div>
                   <div>
@@ -515,7 +518,7 @@ export default function AboutPage() {
                     animate={{ opacity: [0.5, 1, 0.5] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
-                    <div className="text-gray-400">// Update your portfolio in one line</div>
+                    <div className="text-gray-400">{"// Update your portfolio in one line"}</div>
                     <div className="text-blue-400 mt-4">const</div>
                     <div className="text-green-400 ml-4">response</div>
                     <div className="text-gray-300 ml-4">=</div>
@@ -528,7 +531,7 @@ export default function AboutPage() {
                     <div className="text-gray-300 ml-8">
                       <span className="text-green-400">job</span>
                       <span className="text-gray-300">: </span>
-                      <span className="text-yellow-300">"Senior Developer @ AwesomeCo"</span>
+                      <span className="text-yellow-300">&ldquo;Senior Developer @ AwesomeCo&ldquo;</span>
                     </div>
                     <div className="text-gray-400 ml-4">{'}'}</div>
                     <div className="text-gray-300 ml-4">)</div>
@@ -539,8 +542,8 @@ export default function AboutPage() {
 
               {/* Floating Elements */}
               <motion.div
-                animate={floatAnimation.animate}
-                className="absolute -top-6 -right-6 h-12 w-12 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-xl"
+                animate={floatAnimation.animate as any}
+                className="absolute -top-6 -right-6 h-12 w-12 rounded-xl bg-linear-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-xl"
               >
                 <BoltIcon className="h-6 w-6 text-white" />
               </motion.div>
@@ -555,7 +558,7 @@ export default function AboutPage() {
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
-                className="absolute -bottom-6 -left-6 h-12 w-12 rounded-xl bg-gradient-to-br from-green-500 to-cyan-600 flex items-center justify-center shadow-xl"
+                className="absolute -bottom-6 -left-6 h-12 w-12 rounded-xl bg-linear-to-br from-green-500 to-cyan-600 flex items-center justify-center shadow-xl"
               >
                 <SparklesIcon className="h-6 w-6 text-white" />
               </motion.div>
@@ -566,7 +569,7 @@ export default function AboutPage() {
 
       {/* Join Us Section */}
       <section className="py-20 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/20 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-b from-transparent via-blue-900/20 to-transparent" />
         
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
@@ -594,7 +597,7 @@ export default function AboutPage() {
             </motion.h2>
             
             <p className="text-xl text-gray-300 mb-8">
-              Join thousands of developers who've ditched the git push anxiety.
+              Join thousands of developers who&apos;ve ditched the git push anxiety.
               Focus on what matters — building amazing things.
             </p>
           </motion.div>
@@ -606,9 +609,9 @@ export default function AboutPage() {
             whileHover={{ scale: 1.05 }}
             className="inline-block"
           >
-            <a
+            <Link
               href="/auth/create-account"
-              className="group inline-flex items-center px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-bold text-lg shadow-2xl"
+              className="group inline-flex items-center px-8 py-4 rounded-2xl bg-linear-to-r from-blue-600 to-cyan-600 text-white font-bold text-lg shadow-2xl"
             >
               <span>Start Building Smarter</span>
               <motion.div
@@ -618,7 +621,7 @@ export default function AboutPage() {
               >
                 <CommandLineIcon className="h-6 w-6" />
               </motion.div>
-            </a>
+            </Link>
           </motion.div>
 
           {/* Final Quote */}
@@ -627,7 +630,7 @@ export default function AboutPage() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5 }}
-            className="mt-16 p-8 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 backdrop-blur-sm max-w-lg mx-auto"
+            className="mt-16 p-8 rounded-2xl bg-linear-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 backdrop-blur-sm max-w-lg mx-auto"
           >
             <motion.div
               animate={floatAnimation.animate}

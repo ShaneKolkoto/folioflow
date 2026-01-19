@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function CTASection() {
   return (
     <section id="cta" className="py-24 bg-gradient-to-r from-blue-600 to-blue-700">
@@ -54,18 +56,18 @@ export default function CTASection() {
           </div>
 
           <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-            <a
+            <Link
               href="/auth/create-account"
               className="inline-flex items-center justify-center rounded-lg bg-white px-8 py-3 text-lg font-medium text-blue-600 hover:bg-gray-100 transition-colors"
             >
               Get Started Free
-            </a>
-            <a
+            </Link>
+            <Link
               href="/api-docs"
               className="inline-flex items-center justify-center rounded-lg border border-white/30 px-8 py-3 text-lg font-medium text-white hover:bg-white/10 transition-colors"
             >
               Read API Documentation
-            </a>
+            </Link>
           </div>
           
           <p className="mt-8 text-blue-200">
