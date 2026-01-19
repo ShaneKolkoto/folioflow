@@ -189,104 +189,119 @@ export default function HeroSection() {
         </div>
       )}
 
-  {/* Main Hero Content */}
-  <div className="relative mx-auto max-w-7xl px-4 pt-20 pb-16 sm:px-6 lg:px-8 lg:pt-32 z-10">
-    <div className="text-center">
-      <h1 className="text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
-        Build Your Professional
-        <span className="block text-blue-500">CV with API Superpowers</span>
-      </h1>
-      <p className="mx-auto mt-6 max-w-2xl text-xl text-gray-300">
-        Create, manage, and export beautiful CVs. Plus, get a dedicated API to fetch your CV data anytime, anywhere.
-      </p>
-
-      <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-        <Link
-          href="/auth/create-account"
-          className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 px-8 py-3 text-lg font-medium text-white hover:from-blue-700 hover:to-blue-800 transition-colors shadow-lg hover:shadow-xl"
-        >
-          Start Building Free
-        </Link>
-        <Link
-          href="/api-demo"
-          className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-8 py-3 text-lg font-medium text-gray-300 hover:bg-gray-800 transition-colors shadow-sm hover:shadow-md"
-        >
-          Try API Demo
-        </Link>
-      </div>
-
-      <p className="mt-12 text-gray-400">
-        No credit card required • Free forever
+   {/* Main Hero Content */}
+<div className="relative mx-auto max-w-7xl px-4 pt-20 pb-16 sm:px-6 lg:px-8 lg:pt-32">
+  <div className="text-center relative z-10">
+    <h1 className="text-5xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl lg:text-7xl">
+      Build Your Professional
+      <span className="block text-blue-600 dark:text-blue-400">CV with API Superpowers</span>
+    </h1>
+    <p className="mx-auto mt-6 max-w-2xl text-xl text-gray-600 dark:text-gray-300">
+      Create, manage, and export beautiful CVs. Plus, get a dedicated API
+      to fetch your CV data anytime, anywhere. Your career data, always
+      accessible, always up-to-date.
+    </p>
+    <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+      <Link
+        href="/auth/create-account"
+        className="inline-flex items-center justify-center rounded-lg bg-blue-600 dark:bg-blue-500 px-8 py-3 text-lg font-medium text-white hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors shadow-lg hover:shadow-xl z-10 relative"
+      >
+        Start Building Free
+      </Link>
+      <Link
+        href="/api-demo"
+        className="inline-flex items-center justify-center rounded-lg border border-gray-300 dark:border-gray-600 px-8 py-3 text-lg font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-[#1D1D1F] transition-colors shadow-sm hover:shadow-md z-10 relative"
+      >
+        Try API Demo
+      </Link>
+    </div>
+    <div className="mt-12">
+      <p className="text-gray-500 dark:text-gray-400">
+        No credit card required • No, we're not kidding • Seriously, it's
+        free
       </p>
     </div>
   </div>
+</div>
 
-  {/* Main CV Preview */}
-  <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 mt-12 lg:mt-20 lg:pb-20 z-10">
-    <div className="overflow-hidden rounded-2xl border border-[#2C2C2E] bg-gradient-to-br from-[#1D1D1F] to-[#242426] shadow-2xl">
-      <div className="p-8">
-        <div className="flex items-center justify-between border-b border-[#3A3A3C] pb-4">
-          <div className="flex items-center space-x-4">
-            <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-blue-600 to-blue-500 flex items-center justify-center">
-              <span className="text-white font-bold">CV</span>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-white">John Doe</h3>
-              <p className="text-gray-400">Senior Software Engineer</p>
-            </div>
+{/* Main CV Preview */}
+<div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 mt-12 lg:mt-20 lg:pb-20">
+  <div className="overflow-hidden rounded-2xl border border-[#2C2C2E] dark:border-gray-700 bg-[#1D1D1F] shadow-2xl relative z-10">
+    <div className="p-8">
+      <div className="flex items-center justify-between border-b border-[#3A3A3C] dark:border-gray-600 pb-4">
+        <div className="flex items-center space-x-4">
+          <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-500 flex items-center justify-center">
+            <span className="text-white font-bold">CV</span>
           </div>
-          <div className="hidden sm:flex items-center space-x-2">
-            <span className="rounded-full bg-green-700 px-3 py-1 text-sm text-green-300">API Ready</span>
-            <span className="rounded-full bg-blue-700 px-3 py-1 text-sm text-blue-300">Live</span>
+          <div>
+            <h3 className="text-lg font-semibold text-white dark:text-gray-100">John Doe</h3>
+            <p className="text-gray-400 dark:text-gray-300">Senior Software Engineer</p>
+          </div>
+        </div>
+        <div className="hidden sm:flex items-center space-x-2">
+          <span className="rounded-full bg-green-700 px-3 py-1 text-sm text-green-300">API Ready</span>
+          <span className="rounded-full bg-blue-700 px-3 py-1 text-sm text-blue-300">Live</span>
+        </div>
+      </div>
+
+      <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="space-y-4">
+          <h4 className="font-medium text-white dark:text-gray-100">Contact Info</h4>
+          <div className="space-y-2">
+            <div className="h-2 w-full bg-gradient-to-r from-gray-700 to-gray-600 dark:from-gray-600 dark:to-gray-500 rounded"></div>
+            <div className="h-2 w-3/4 bg-gradient-to-r from-gray-700 to-gray-600 dark:from-gray-600 dark:to-gray-500 rounded"></div>
           </div>
         </div>
 
-        <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Contact Info */}
-          <div className="space-y-4">
-            <h4 className="font-medium text-white">Contact Info</h4>
-            <div className="space-y-2">
-              <div className="h-2 w-full bg-gray-700 rounded"></div>
-              <div className="h-2 w-3/4 bg-gray-700 rounded"></div>
-            </div>
-          </div>
-
-          {/* Experience */}
-          <div className="space-y-4">
-            <h4 className="font-medium text-white">Experience</h4>
-            <div className="space-y-2">
-              <div className="h-2 w-full bg-gray-700 rounded"></div>
-              <div className="h-2 w-4/5 bg-gray-700 rounded"></div>
-              <div className="h-2 w-2/3 bg-gray-700 rounded"></div>
-            </div>
-          </div>
-
-          {/* Skills */}
-          <div className="space-y-4">
-            <h4 className="font-medium text-white">Skills</h4>
-            <div className="flex flex-wrap gap-2">
-              {["React","Node.js","TypeScript","AWS","Docker","MongoDB"].map(skill => (
-                <span key={skill} className="px-3 py-1 text-xs rounded-full bg-gradient-to-r from-blue-800 to-blue-700 text-blue-200 border border-blue-600">{skill}</span>
-              ))}
-            </div>
+        {/* Experience */}
+        <div className="space-y-4">
+          <h4 className="font-medium text-white dark:text-gray-100">Experience</h4>
+          <div className="space-y-2">
+            <div className="h-2 w-full bg-gradient-to-r from-gray-700 to-gray-600 dark:from-gray-600 dark:to-gray-500 rounded"></div>
+            <div className="h-2 w-4/5 bg-gradient-to-r from-gray-700 to-gray-600 dark:from-gray-600 dark:to-gray-500 rounded"></div>
+            <div className="h-2 w-2/3 bg-gradient-to-r from-gray-700 to-gray-600 dark:from-gray-600 dark:to-gray-500 rounded"></div>
           </div>
         </div>
 
-        {/* Buttons */}
-        <div className="mt-8 flex justify-center space-x-4">
-          <button className="rounded-lg border border-[#3A3A3C] px-4 py-2 text-sm font-medium text-gray-300 hover:bg-[#2C2C2E] transition-colors shadow-sm hover:shadow">
-            Export PDF
-          </button>
-          <button className="rounded-lg border border-[#3A3A3C] px-4 py-2 text-sm font-medium text-gray-300 hover:bg-[#2C2C2E] transition-colors shadow-sm hover:shadow">
-            Export JSON
-          </button>
-          <button className="rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 px-4 py-2 text-sm font-medium text-white hover:from-blue-700 hover:to-blue-800 transition-colors shadow-lg hover:shadow-xl">
-            API Fetch Example
-          </button>
+        {/* Skills */}
+        <div className="space-y-4">
+          <h4 className="font-medium text-white dark:text-gray-100">Skills</h4>
+          <div className="flex flex-wrap gap-2">
+            {[
+              "React",
+              "Node.js",
+              "TypeScript",
+              "AWS",
+              "Docker",
+              "MongoDB",
+            ].map((skill) => (
+              <span
+                key={skill}
+                className="px-3 py-1 text-xs rounded-full bg-gradient-to-r from-blue-800 to-blue-700 dark:from-blue-700 dark:to-blue-600 text-blue-200 dark:text-blue-100 border border-blue-600 dark:border-blue-500"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
         </div>
+      </div>
+
+      {/* Buttons */}
+      <div className="mt-8 flex justify-center space-x-4">
+        <button className="rounded-lg border border-[#3A3A3C] dark:border-gray-600 px-4 py-2 text-sm font-medium text-gray-300 dark:text-gray-200 hover:bg-[#2C2C2E] dark:hover:bg-[#1D1D1F] transition-colors shadow-sm hover:shadow">
+          Export PDF
+        </button>
+        <button className="rounded-lg border border-[#3A3A3C] dark:border-gray-600 px-4 py-2 text-sm font-medium text-gray-300 dark:text-gray-200 hover:bg-[#2C2C2E] dark:hover:bg-[#1D1D1F] transition-colors shadow-sm hover:shadow">
+          Export JSON
+        </button>
+        <button className="rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-500 dark:to-blue-600 px-4 py-2 text-sm font-medium text-white dark:text-gray-100 hover:from-blue-700 hover:to-blue-800 dark:hover:from-blue-600 dark:hover:to-blue-700 transition-colors shadow-lg hover:shadow-xl">
+          API Fetch Example
+        </button>
       </div>
     </div>
   </div>
-</section>
+</div>
+
+    </section>
   );
 }
